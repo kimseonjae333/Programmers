@@ -3,22 +3,15 @@ import java.util.ArrayList;
 class Solution {
     public boolean solution(int x) {
         boolean answer = true;
-        int originalX = x;
-        
-        ArrayList<Integer> arr = new ArrayList<>();
-        while( x > 0 ){
-            arr.add(x % 10);
-            x /= 10;
-        }
-        int sum = 0;
-        for(int i = 0; i < arr.size(); i++){
-            sum += arr.get(i);
+        String[] nums = String.valueOf(x).split("");
+        int sum = 0; 
+        for(int i = 0; i < nums.length; i++){
+            sum += Integer.parseInt(nums[i]);
         }
         
-        if(originalX % sum != 0){
+        if(x%sum != 0) {
             answer = false;
         }
-       
         return answer;
     }
 }
