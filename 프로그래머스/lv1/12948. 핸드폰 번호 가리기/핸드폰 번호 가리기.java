@@ -1,8 +1,11 @@
 class Solution {
     public String solution(String phone_number) {
-        String star = "*";
-        String answer = phone_number.replace
-            (phone_number.substring(0,phone_number.length()-4),star.repeat(phone_number.length()-4));
+        char[] ch = phone_number.toCharArray();
+        for(int i = 0; i < phone_number.length()-4; i++){
+            ch[i] = '*';
+        }
+        
+        String answer = String.valueOf(ch);
         return answer;
     }
 }
